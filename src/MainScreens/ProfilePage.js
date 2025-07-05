@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { StyleSheet, Text, View } from 'react-native'
 
 const ProfilePage = () => {
   return (
-    <View>
+    <View style={styles.mainView}>
       <Text>ProfilePage</Text>
     </View>
   )
@@ -11,4 +11,11 @@ const ProfilePage = () => {
 
 export default ProfilePage
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    mainView:{
+        flex: 1,
+        backgroundColor: 'white',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+})

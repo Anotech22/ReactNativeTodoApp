@@ -1,7 +1,12 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-// import React from 'react';
+import React from 'react';
 import IndexPage from '../MainScreens/IndexPage';
 import ProfilePage from '../MainScreens/ProfilePage';
+import Calendar from '../MainScreens/Calendar';
+import Plus from '../MainScreens/Plus';
+import Focus from '../MainScreens/Focus';
+
+
 const Tab = createBottomTabNavigator();
 
 function BottomTabScreen() {
@@ -11,8 +16,11 @@ function BottomTabScreen() {
         headerShown:false
     }}
     >
-      <Tab.Screen name="Home" component={IndexPage} />
-      <Tab.Screen name="Profile" component={ProfilePage} />
+      <Tab.Screen name="Index" component={IndexPage}/>
+      <Tab.Screen name="calendar" component={Calendar}/>
+      <Tab.Screen name="plus" component={Plus}/>
+      <Tab.Screen name="focus" component={Focus}/>
+      <Tab.Screen name="Profile" component={ProfilePage}/>
     </Tab.Navigator>
   );
 }

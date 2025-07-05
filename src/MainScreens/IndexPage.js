@@ -21,8 +21,7 @@ const IndexPage = () => {
             <Text style={styles.headerText}>What do you want to do today?</Text>
             <Text style={styles.headerText}>Tap + to add your tasks</Text>
         </View>
-      
-    
+        
     </View>
   )
 }
