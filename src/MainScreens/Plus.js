@@ -1,15 +1,15 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Focus = () => {
+const Plus = () => {
   return (
     <View style={styles.mainView}>
-      <Text>Focus</Text>
+      <Text>Plus</Text>
     </View>
   )
 }
 
-export default Focus
+export default Plus
 
 const styles = StyleSheet.create({
     mainView:{

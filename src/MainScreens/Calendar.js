@@ -3,7 +3,7 @@ import React from 'react'
 
 const Calendar = () => {
   return (
-    <View>
+    <View style={styles.mainView}>
       <Text>Calendar</Text>
     </View>
   )
@@ -11,4 +11,11 @@ const Calendar = () => {
 
 export default Calendar
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    mainView:{
+        flex: 1,
+        backgroundColor: 'white',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+})
