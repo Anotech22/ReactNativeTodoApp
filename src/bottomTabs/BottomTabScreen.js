@@ -27,34 +27,86 @@ function BottomTabScreen() {
             height: 100,
 
         },
-    }}
-    // tabBarOptions={{
-    //     showLabel: false
-    // }}
-    >
+       }}>
+
       <Tab.Screen name="Index" component={IndexPage} options={{
             tabBarIcon:({focused}) =>(
-                <View>
+                <View style ={{alignItems:'center', justifyContent:'center'}}>
                    <Image source={require('../../assets/icons/home-2.png')}
                    resizeMode='contain'
+                    style={{
+                      width: 25, 
+                      height: 25,
+                      tintColor: focused ? '#8687E7' : '#8e8e93',
+                      marginTop: 50,
+                      marginBottom: 10,
+                    }}
                    />
-                   <Text>Index</Text> 
+                   <Text style={{color: focused? 'white' : '#8e8e93', fontSize:12, textAlign:'center' }}>Index</Text>
                 </View>
             ),
       }}/>
       <Tab.Screen name="calendar" component={Calendar} options={{
             tabBarIcon: ({focused}) =>(
-              <View>
-                <Image source={require('../../assets/icons/home-2.png')}
+              <View style ={{alignItems:'center', justifyContent:'center', marginTop: 10}}>
+                <Image source={require('../../assets/icons/calendar.png')}
                 resizeMode='contain'
+                style={{
+                  width: 25,
+                  height: 25,
+                  tintColor: focused ? '#8687E7' : '#8e8e93',
+                  marginTop: 50,
+                  marginBottom: 10,
+                }}
                 />
+                <Text style={{color: focused? 'white' : '#8e8e93', fontSize:12, textAlign:'center',}}>Calendar</Text>
               </View>
             ),
       }}/>
-      <Tab.Screen name="plus" component={Plus}/>
-      <Tab.Screen name="focus" component={Focus}/>
-      <Tab.Screen name="Profile" component={ProfilePage}/>
-    </Tab.Navigator>
+      <Tab.Screen name="plus" component={Plus} options={{
+            tabBarIcon:({focused})=>(
+              <View>
+               
+                <Text>plus</Text>
+              </View>
+
+            ),
+      }}/>
+      <Tab.Screen name="focus" component={Focus} options = {{
+            tabBarIcon:({focused})=>(
+              <View>
+                <Image source={require('../../assets/icons/clock.png')}
+                resizeMode='contain'
+                style={{
+                  width: 25, 
+                  height: 25,
+                  tintColor: focused ? '#8687E7' : '#8e8e93',
+                  marginTop: 50,
+                  marginBottom: 10,
+                }}
+                />
+                <Text>Focus</Text>
+              </View>
+            ),
+      }}/>
+      <Tab.Screen name="Profile" component={ProfilePage} options={{
+            tabBarIcon:({focused})=>(
+              <View>
+                <Image source={require('../../assets/icons/user.png')}
+                resizeMode='contain'
+                style={{
+                  width: 25, 
+                  height:25,
+                  tintColor: focused ? '#8687E7' : '#8e8e93',
+                  marginTop: 50,
+                  marginBottom: 10,
+                }}
+                />
+                <Text>User</Text>
+              </View>
+            ),
+            }}/>
+      </Tab.Navigator>
   );
 }
 
