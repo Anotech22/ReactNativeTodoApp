@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Calendar from '../MainScreens/Calendar';
 import Focus from '../MainScreens/Focus';
 import IndexPage from '../MainScreens/IndexPage';
@@ -9,6 +9,31 @@ import ProfilePage from '../MainScreens/ProfilePage';
 
 
 const Tab = createBottomTabNavigator();
+
+const CustomPlusButton = ({children, onPress}) =>(
+    <TouchableOpacity
+      style={{
+          top: -30,
+          justifyContent:'center',
+          alignItems: 'center',
+
+      }}
+      onPress={onPress}
+    >
+        <View
+          style = {{
+            width: 70,
+            height:70,
+            borderRadius:35,
+            backgroundColor: '#8687E7',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          {children}
+        </View>
+    </TouchableOpacity>
+);
 
 function BottomTabScreen() {
   return (
@@ -42,13 +67,13 @@ function BottomTabScreen() {
                       marginBottom: 10,
                     }}
                    />
-                   <Text style={{color: focused? 'white' : '#8e8e93', fontSize:12, textAlign:'center' }}>Index</Text>
+                   <Text style={{color: focused? 'white' : '#8e8e93', fontSize:12, textAlign:'center', }}>Index</Text>
                 </View>
             ),
       }}/>
       <Tab.Screen name="calendar" component={Calendar} options={{
             tabBarIcon: ({focused}) =>(
-              <View style ={{alignItems:'center', justifyContent:'center', marginTop: 10}}>
+              <View style ={{alignItems:'center', justifyContent:'center', marginTop: 17}}>
                 <Image source={require('../../assets/icons/calendar.png')}
                 resizeMode='contain'
                 style={{
@@ -59,18 +84,25 @@ function BottomTabScreen() {
                   marginBottom: 10,
                 }}
                 />
-                <Text style={{color: focused? 'white' : '#8e8e93', fontSize:12, textAlign:'center',}}>Calendar</Text>
+                <Text style={{color: focused? 'white' : '#8e8e93', fontSize:12, textAlign:'center', width:42,}}>Calendar</Text>
               </View>
             ),
       }}/>
       <Tab.Screen name="plus" component={Plus} options={{
             tabBarIcon:({focused})=>(
-              <View>
-               
-                <Text>plus</Text>
-              </View>
+                  <Image source={require('../../assets/icons/add.png')}
+                resizeMode='contain'
+                style = {{
+                  width: 30,
+                  height: 30,
+                  tintColor: focused ? 'white' : '#8e8e93',
+                }}
 
+                  />
             ),
+            tabBarButton: (props) =>(
+              <CustomPlusButton {...props}/>
+            )
       }}/>
       <Tab.Screen name="focus" component={Focus} options = {{
             tabBarIcon:({focused})=>(
@@ -85,7 +117,7 @@ function BottomTabScreen() {
                   marginBottom: 10,
                 }}
                 />
-                <Text>Focus</Text>
+                <Text style={{color: focused? 'white' : '#8e8e93', fontSize:12, textAlign:'center',}}>Focus</Text>
               </View>
             ),
       }}/>
@@ -102,7 +134,7 @@ function BottomTabScreen() {
                   marginBottom: 10,
                 }}
                 />
-                <Text>User</Text>
+                <Text style={{color: focused? 'white' : '#8e8e93', fontSize:12, textAlign:'center',}}>User</Text>
               </View>
             ),
             }}/>
