@@ -6,11 +6,16 @@ import Focus from '../MainScreens/Focus';
 import IndexPage from '../MainScreens/IndexPage';
 import Plus from '../MainScreens/Plus';
 import ProfilePage from '../MainScreens/ProfilePage';
+import { useNavigation } from '@react-navigation/native';
 
 
 const Tab = createBottomTabNavigator();
 
-const CustomPlusButton = ({children, onPress}) =>(
+
+
+const CustomPlusButton = ({children, onPress}) =>{
+
+return(
     <TouchableOpacity
       style={{
           top: -30,
@@ -34,8 +39,13 @@ const CustomPlusButton = ({children, onPress}) =>(
         </View>
     </TouchableOpacity>
 );
+}
 
 function BottomTabScreen() {
+
+  
+
+
   return (
     <Tab.Navigator
     screenOptions={{
@@ -95,7 +105,7 @@ function BottomTabScreen() {
                 style = {{
                   width: 30,
                   height: 30,
-                  tintColor: focused ? 'white' : '#8e8e93',
+                  tintColor: focused ? 'white' : 'white',
                 }}
 
                   />

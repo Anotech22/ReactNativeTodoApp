@@ -39,7 +39,6 @@ const Welcome = () => {
     </View>
   )
 }
-
 export default Welcome
 
 const styles = StyleSheet.create({

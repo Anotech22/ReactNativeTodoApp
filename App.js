@@ -6,8 +6,10 @@ import Register from './src/auth/Register'
 import ScrolScreen from './src/auth/ScrolScreen'
 import Splash from './src/auth/Splash'
 import Welcome from './src/auth/Welcome'
+import Create from './src/MainScreens/Create'
 import BottomTabScreen from './src/bottomTabs/BottomTabScreen'
 import IndexPage from './src/MainScreens/IndexPage'
+import Plus from './src/MainScreens/Plus'
 
 
 const Stack = createNativeStackNavigator()
@@ -23,6 +25,12 @@ const App = () => {
         <Stack.Screen name ='register' component = {Register}/>
         <Stack.Screen name ='index' component = {IndexPage}/>
         <Stack.Screen name ='bottomTab' component = {BottomTabScreen}/>
+        <Stack.Screen name ='create' component = {Create}/>
+        <Stack.Screen name ='plus' component = {Plus}
+        options={{
+          presentation:'modal'
+        }}
+        />
     </Stack.Navigator>
   )
 }
