@@ -25,7 +25,11 @@ const App = () => {
         <Stack.Screen name ='register' component = {Register}/>
         <Stack.Screen name ='index' component = {IndexPage}/>
         <Stack.Screen name ='bottomTab' component = {BottomTabScreen}/>
-        <Stack.Screen name ='create' component = {Create}/>
+        <Stack.Screen name ='create' component = {Create} 
+          options={{
+            presentation:'modal'
+          }}
+        />
         <Stack.Screen name ='plus' component = {Plus}
         options={{
           presentation:'modal'

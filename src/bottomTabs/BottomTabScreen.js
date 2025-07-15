@@ -42,12 +42,9 @@ return(
 }
 
 function BottomTabScreen() {
-
-  
-
-
   return (
     <Tab.Navigator
+    initialRouteName='Index'
     screenOptions={{
         headerShown:false,
         tabBarShowLabel: false,
