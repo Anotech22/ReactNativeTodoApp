@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     marginBottom: 28,
     width:327,
-    height: 48, 
+    height: 48,
     paddingVertical: 12,
     paddingHorizontal: 48,
     textAlign: 'center',

@@ -7,7 +7,6 @@ const ScrolScreen = () => {
     const navigation = useNavigation()
   return (
     <View style = {styles.mainView}>
-       
        {/* Container for the two images on screen */}
         <View style = {styles.imageView}>
             <Image
@@ -17,7 +16,8 @@ const ScrolScreen = () => {
             source ={require('../../assets/images/scrolNav.png')}
             style = {{marginTop: '30%'}}
             />
-        </View>
+        </View>  
+        
 
         {/* Texts Container  */}
         <View style ={styles.textContainer}>
